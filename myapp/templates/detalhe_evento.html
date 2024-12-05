@@ -1,0 +1,14 @@
+<h1>{{ evento.nome }}</h1>
+<p>{{ evento.descricao }}</p>
+<p>Data: {{ evento.data }}</p>
+<p>Horário: {{ evento.horario }}</p>
+<p>Local: {{ evento.local }}</p>
+
+{% if user.is_authenticated %}
+    <form action="{% url 'inscrever_evento' evento.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Inscrever-se</button>
+    </form>
+{% else %}
+    <p>Faça login para se inscrever.</p>
+{% endif %}

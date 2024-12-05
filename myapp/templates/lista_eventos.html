@@ -1,0 +1,8 @@
+<h1>Lista de Eventos</h1>
+<ul>
+    {% for evento in eventos %}
+    <li>
+        <a href="{% url 'detalhe_evento' evento.id %}">{{ evento.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
